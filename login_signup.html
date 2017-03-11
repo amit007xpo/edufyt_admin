@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<title>login</title>
+	<script type="text/javascript" src = "js/angular.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script>
+		angular.module('tabApp', [])
+  .controller('TabController', ['$scope', function($scope) {
+    $scope.tab = 1;
+
+    $scope.setTab = function(newTab){
+      $scope.tab = newTab;
+    };
+
+    $scope.isSet = function(tabNum){
+      return $scope.tab === tabNum;
+    };
+}]);
+	</script>
+
+</head>
+<body>
+	<div class="container" ng-app="tabApp">
+  <div class="row" ng-controller="TabController">
+  	<div class="row col-xs-8 col-xs-offset-2">
+  		<ul class="nav nav-pills nav-stacked">
+  		<div class = "col-xs-4">
+       	<li ng-class="{ active: isSet(1) }">
+          	<a href ng-click="setTab(1)">LOGIN</a>
+       	</li>
+       	</div>
+       	<div class = "col-xs-4">
+       	<li ng-class="{ active: isSet(2) }">
+          	<a href ng-click="setTab(2)">SIGNUP</a>
+       	</li>
+       	</div>
+     	</ul>
+  	</div>
+    <div class="col-xs-8 col-xs-offset-2">
+  		<div class="jumbotron">
+       	<div ng-show="isSet(1)">
+         	 <h1>LOGIN</h1>
+          	
+         	 
+        	</div>
+			<div ng-show="isSet(2)">
+          <h1>SIGNUP</h1>
+          <p>Profile information</p>
+     	</div>
+  	</div>
+  </div>
+</div>
+</body>
+</html>
