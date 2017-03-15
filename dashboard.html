@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app = "edufyt">
+<head>
+	<title>Dashboard</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script type="text/javascript" src = "js/angular.js"></script>
+    
+
+		<script>
+		  angular.module('edufyt', []);
+		</script>
+		<script type="text/javascript" src= "js/controllers/partialsInclude.js"></script>
+	  <script type="text/javascript" src= "js/controllers/schedule.js"></script>
+     <script type="text/javascript" src= "js/angularjs/navbar.js"></script>
+    
+    <script type="text/javascript" src = "js/controllers/schedule.js"></script>
+</head>
+<body class = "container-fulid">
+
+<div class = "row container-fulid">
+	<!-- for showing the user details -->
+	<div class = "col-xs-3 user-info-col row container-fulid">
+		<div class = "gravtar row">
+			<img src="image/user.jpeg">
+		</div>
+		<div class= "row user_name">
+		User Name
+		</div>
+		<div class="row user_rank">Rank</div>
+		<div class = "user_follow">Follow</div>
+	</div>
+	<!-------for the showing the schedule of the user -->
+	<div class = "col-xs-6 user-schedule" ng-controller = "scheduleCtrl">
+		<div class ="well" ng-repeat = "item in schedule">
+			<h3 class= "btn btn-primary btn-lg btn-block">{{item.date}}</h3>
+			<div class = "to_to_list container-fluid">
+				<label>lectures to watch: {{item.lectures}} </label><br>
+				<label>Assignments to do: {{item.assignment}} </label><br>
+				<label>test to appear: {{item.tests}}</label><br>
+                <md-calendar ng-model="birthday"></md-calendar>
+         
+
+			</div>
+			</div>
+	</div>
+	<!---- for showing the updates of the user-->
+	<div class = "col-xs-2 user-updates">
+	</div>
+
+</div>
+
+</body>
+</html>

@@ -35,11 +35,3 @@ h1, p, a {
   border-color: #6C6C6C !important;
   border-radius: 25px; 
 }
-.gravtar >img {
-    width: 100%; /* or any custom size */
-    height: 100%; 
-    object-fit: contain;
-}
-.user_name, .user_rank, .user_follow {
-	text-align: center;
-}
